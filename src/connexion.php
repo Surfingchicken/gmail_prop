@@ -28,6 +28,9 @@ class Database{
     $datas = $req->fetch();
     return $datas;
     }
+    public function closeCursor(){
+
+    }
 }
 $connexion = new Database("Gmail");
 try{
@@ -67,7 +70,6 @@ try{
     if($valid === false){
         echo "<p class=\"warning\">Erreur login ou mot de passe?</p>";
     }
-    $connexion->closeCursor();
 }
 catch(Exception $e){
     die("Erreur de connexion : ".$e->getMessage());

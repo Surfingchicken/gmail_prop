@@ -89,10 +89,9 @@ button{
     position: fixed;
     bottom: 5vh;
     right: 5vw;
-    background-color: none;
     border: none;
-    height: 3rem;
-    border: none;
+    height: 6rem;
+    width: 6rem;
     border-radius: 50%;
     background-color: #dd5347;
     color: #fafafa;
@@ -100,8 +99,8 @@ button{
     box-shadow: 0.1rem 0.3rem 0.2rem rgba(0, 0, 0, 0.706);
 }
 .material-symbols-outlined{
-    font-size: 3rem;
-    font-weight: 100;
+    font-size: 5rem;
+    font-weight: 300;
     position: relative;
     top: 0.2rem;
     
@@ -121,10 +120,15 @@ button{
     padding: 1rem;
     margin: 2rem 0 0 10rem;
     text-transform: uppercase;
+    display: inline-block;
+    line-height: 3.5rem;
+    width: 20rem;
+    text-align: center;
 }
 #inscr{
     height: 100vh;
     padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 .desc{
     height: 25vh;
@@ -144,7 +148,7 @@ button{
 .form-primary{
     border: solid 0.1rem rgba(150, 147, 147, 0.417);
     background: #fff;
-    height: 55vh;
+    height: min-content;
     margin: 3rem 20vw 3rem 20vw;
     border-radius: 0.5rem;
 
@@ -166,13 +170,15 @@ button{
     row-gap: 1rem;
 }
 .form-primary label{
-    font-size: 1.2rem;
+    font-size: 1.35rem;
     height: min-content;
 }
 .form-primary form input{
-    line-height: 3.5rem ;
+    line-height: 3rem ;
+    font-size: 1.35rem;
     border: none;
     box-shadow: 0 0.1rem 0.2rem 0.1rem rgba(157, 155, 155, 0.505);
+    padding: 10px;
 }
 .form-primary input:nth-of-type(1),.form-primary input:nth-of-type(2){
     background-color: rgba(237, 236, 236, 0.716);
@@ -181,7 +187,7 @@ button{
     background-color: rgba(255, 255, 161, 0.899);
 } 
 .form-primary input[type='submit']{
-    margin: 0 30% 0 30%;
+    margin: 0 30% 1rem 30%;
     background-color: #1a48ff;
     border: none;
     color: #fff;

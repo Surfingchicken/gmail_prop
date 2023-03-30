@@ -67,7 +67,7 @@ try{
     if($valid === false){
         echo "<p class=\"warning\">Erreur login ou mot de passe?</p>";
     }
-    $reponse->closeCursor();
+    $connexion->closeCursor();
 }
 catch(Exception $e){
     die("Erreur de connexion : ".$e->getMessage());

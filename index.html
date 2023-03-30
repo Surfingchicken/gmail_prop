@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="./asset/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./asset/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./asset/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./asset/favicon/site.webmanifest">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Gmail</title>
+</head>
+<body>
+    <header>
+        <img src="./asset/icons8-gmail-logo-48.png" alt="gmail_logo">
+        <h1>Gmail</h1>
+        <nav>
+            <ul>
+                <li><a href="./index.html#accueil" tabindex="0" autofocus>Pour les pros</a></li>
+                <li><a href="./connect.html" tabindex="0" autofocus>Connexion</a></li>
+                <li><a href="./index.html#insc" tabindex="0" autofocus>Créer un compte</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="accueil">
+        <section>
+            <h2>Retrouver la fluidité et la simplicité de Gmail sur tous vos appareils</h2>
+            <a href="#inscr"> Créer un compte</a>
+        </section>
+    </main>
+    <footer id="inscr">
+        <section class="desc">
+            <h3>Une boîte de réception entièrement repensée</h3>
+                <p>Avec les nouveaux onglets personnalisables, repérez immédiatemment les nouveaux messages et choisissez ceux que vous souhaitez lire en priorité.
+                </p>
+        </section>
+        <section class="form-primary">
+            <h3>Créer un compte</h3> 
+            <form action="index.php" method="post">
+                <label for="nom">Nom *</label>
+                <input type="text" placeholder="Votre nom" id="nom" name="nom" aria-required="true" autofocus>
+
+                <label for="prenom">Prénom *</label>
+                <input type="text" placeholder="Votre prénom" id="prenom" name="prenom" aria-required="true" autofocus>
+
+                <label for="email">Mail *</label>
+                <input type="email" placeholder="Adresse mail" for="email" id="email" name="email" aria-required="true" autofocus>
+
+                <label for="password">Choisir votre mot de passe *</label>
+                <input type="password" placeholder="Mot de Passe" for="password" id="password" name="password">
+
+                <input type="submit" value="Valider votre compte">
+            </form>
+        </section>
+    </footer>
+    <button id="nav-button"> 
+        <span class="material-symbols-outlined">
+            keyboard_arrow_down
+        </span>
+    </button>
+        <script src="./main.js"></script>
+</body>
+</html>

@@ -3,9 +3,6 @@
 namespace App;
 use \PDO;
 */
-$_SESSION["nom"] = $_POST["nom"];
-$_SESSION["prenom"] = $_POST["prenom"];
-
 class Database{
     
     private $db_name;

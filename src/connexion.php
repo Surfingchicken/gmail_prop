@@ -24,56 +24,51 @@ class Database{
     
     }
     public function query($_state){ //envoyer en paramètre la requête sql
-    $req = $this->getPDO()->query($_state);
+    $req = $this->getPDO()->prepare($_state);
+    $req->execute([$_POST['email']]);
     $datas = $req->fetch();
+    $req->closeCursor();
     return $datas;
     }
-    public function closeCursor(){
-
-    }
 }
+
 $connexion = new Database("Gmail");
-try{
-    $connexion;
-    $connexion->query('SELECT email, password FROM Users');
-    $valid = true;
 
-    while($datas){
-        $data['email'];
-        $data['password'];
-        
-        if(isset($_POST['email']) && isset($_POST['password'])){
-            $login = $_POST['email'];
-            $mdp = $_POST['password'];
-
-            if(!$login || !$mdp){
-                echo "<p class=\"warning\">Vous avez oubliez votre mail ou password?</p>";
-                exit;
-            }
-            else if($login != $data['email']){
-              $valid = false;  
-            }
-            else if (!password_verify($mdp, $data['password'])){
-                $valid = false;
-            }
-            else{
+if( (isset($_POST['email'])) && (isset($_POST['password'])) ){
+    $login = $_POST['email'];
+    $mdp = $_POST['password'];
+    try{
+        $connexion;
+        $datas = $connexion->query("SELECT * FROM users WHERE email = ?");
+        $valid = false;
+        while($datas){
+            $datas['email'];
+            $datas['password']; 
+            if( ($login = $datas['email']) && (password_verify($mdp, $datas['password'])) ){
+                $valid = true;
                 //print "<a href=\"connection.php\">Go!!!</a>";
-                $valid == true;
                 $_SESSION['nom'] = $login;
                 $_SESSION['mdp'] = md5($mdp);
                 echo "<p class=\"success\">Votre login est ".$_SESSION['nom']."
                 votre mot de passe est  ".md5($mdp);
                 exit;
             }
+            else{
+                $valid = false;
+            }
         }              
+        if($valid == false){
+            echo "<p class=\"warning\">Erreur login ou mot de passe?</p>";
+            exit;
+        }
     }
-    if($valid === false){
-        echo "<p class=\"warning\">Erreur login ou mot de passe?</p>";
+    catch(Exception $e){
+        die("Erreur de connexion : ".$e->getMessage());
     }
+    
 }
-catch(Exception $e){
-    die("Erreur de connexion : ".$e->getMessage());
+else if ( (isset($_POST['email'])) xor (isset($_POST['password'])) ) {
+        echo "<p class=\"warning\">Vous avez oubliez votre mail ou password?</p>";
+        exit;
 }
-
-
 ?>
